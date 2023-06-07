@@ -17,16 +17,16 @@ places. Like logging, database configuration or external http requests.
 
 ### TL/DR
 
-This command will run the application locally using Docker
+This command will setup development enviroment
 
 ```
-make dev/run
+make dev/setup
 ```
 
 ### Local
 
 Run `make dev/run` in order to run the local server and then access the local endpoint
-at [http://127.0.0.1:5000/](http://127.0.0.1:5000/picture)
+at [http://localhost:5000/](http://localhost:5000/)
 
 ### Setup local development environment
 

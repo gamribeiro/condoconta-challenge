@@ -12,26 +12,7 @@ dev/setup:
 		. $(PYTHON_BIN)/activate; \
 		pip3 install -U pip setuptools; \
 		pip3 install -r requirements.txt; \
-	)
-
-# Generate a new migration file that holds a database change
-#
-#   make db/migration name=add_poc_table
-#
-db/migration:
-	( \
-		. $(PYTHON_BIN)/activate; \
-		alembic revision -m "$(name)"; \
-	)
-
-# Run the pending migrations against the configured database (default to docker/local database)
-#
-#   make db/migrate
-#
-db/migrate:
-	( \
-		. $(PYTHON_BIN)/activate; \
-		alembic upgrade head; \
+		alembic upgrade head;
 	)
 
 # Run tests in local environment
