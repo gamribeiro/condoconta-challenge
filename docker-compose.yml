@@ -1,0 +1,19 @@
+version: "3"
+services:
+  api:
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    image: postgis/postgis:12-3.3
+    environment:
+      - POSTGRES_USER=gamribeiro
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=condoconta_challenge
+    ports:
+      - 5432:5432
+volumes:
+  db_data:
